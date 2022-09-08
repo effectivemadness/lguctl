@@ -1,0 +1,32 @@
+run:
+  timeout: 6m
+  modules-download-mode: vendor
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - deadcode
+    - dogsled
+    - goconst
+    - goimports
+    - goprintffuncname
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - nakedret
+    - rowserrcheck
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - whitespace
+
+linters-settings:
+  goimports:
+    local-prefixes: github.com/u-cto-devops/lguctl

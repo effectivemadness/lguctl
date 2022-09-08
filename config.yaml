@@ -1,0 +1,30 @@
+# name should be the same with <name>@lguplus.co.kr
+- profile: default
+  name: zerone@lguplus.co.kr
+  duration: 14400
+
+  # Assume role list used for assuming to another account
+  # Do not add username after role arn
+  assume_roles:
+    dev: arn:aws:iam::122518608090:role/svcproto-dev-admin
+    releng: arn:aws:iam::560580250579:role/svcproto-releng-admin
+    prd: arn:aws:iam::902336165138:role/svcproto-prd-admin
+    sandbox: arn:aws:iam::506954789174:role/svcproto-sandbox-admin
+  #  bered:
+  #  bere:
+  #  prod:
+
+  # databases hostnames
+  # A value of key should be in the array of keys of assume_roles
+  #databases:
+  #  dev:
+  #  stage:
+  #  loadtest:
+  #    - 
+  #  prod:
+  #maintenance:
+  #  message: "We're currently down for maintenance. (2020/10/28 AM 05 ~ AM 09 in KST)"
+ #  arns:
+ #     - loadbalancer_arn: ""
+ #       default_targetgroup_arn: ""
+

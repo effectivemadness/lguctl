@@ -1,0 +1,25 @@
+package child
+
+import (
+	"context"
+	"io"
+
+	"github.com/spf13/cobra"
+
+	"github.com/u-cto-devops/lguctl/cmd/lguctl/cmd/builder"
+	"github.com/u-cto-devops/lguctl/pkg/executor"
+)
+
+func NewCmdIAMPolicy() *cobra.Command {
+	return builder.NewCmd("policy").
+		WithDescription("Get IAM policy assigned to Group").
+		SetFlags().
+		RunWithArgsAndCmd(funcGetIAMPolicy)
+}
+
+// funcGetIAMPolicy
+func funcGetIAMPolicy(ctx context.Context, out io.Writer, cmd *cobra.Command, args []string) error {
+	return executor.RunExecutorWithoutCheckingConfig(ctx, func(executor executor.Executor) error {
+		return executor.Runner.GetIAMPolicyAttachedGroup(out)
+	})
+}
